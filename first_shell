@@ -1,0 +1,5 @@
+#!/bin/bash
+#It`s my first shell script;
+date
+who
+echo this is a test;
