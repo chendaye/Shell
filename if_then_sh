@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# process control
+
+if date 
+then
+ echo 'it works'
+fi
+
+
+if apt-cache search php
+then
+ date
+else
+ ps -aux
+fi
+
+
+if date
+then
+ pwd
+elif  ll
+then 
+ ps
+fi
+

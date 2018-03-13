@@ -1,0 +1,233 @@
+#!/bin/bash
+
+
+if test 0
+then
+ pwd
+fi
+
+# compare number
+if [ date -eq 0 ]
+then
+ ps
+else
+ echo 'else'
+fi
+
+
+var1=0
+var2=5
+
+if [ $var2 -gt 0 ]
+then
+ echo $var1
+elif [ $var1 -eq 0 ]
+then
+ echo $var2
+fi
+
+
+# compare string
+
+user=chendaye666
+
+if [ $USER != $user ]
+then
+ echo not $user
+elif [ $USER = $user ]
+then
+ echo "welcom $user"
+else
+ echo null
+fi
+
+
+
+a=chendaye666
+b=long
+
+if [ $a \> $b]
+then
+ echo "$a greater then $b"
+elif [ $a \< $b ]
+then
+ echo "$a less then $b"
+fi
+
+# check the string if have value
+
+str1=testing
+str2=''
+
+# -n not empty  
+if [ -n $str1 ]
+then
+ echo 'have value'
+else
+ echo no value
+fi
+
+# -z  is empty
+if [ -z $str2 ]
+then
+ echo have no  value
+else
+ echo have value
+fi
+
+
+# compare file
+
+# -d  check if the path is a dictionaty
+path=$HOME
+
+if  [ -d $path ]
+then
+ echo "$path is a dictionary"
+else
+ echo "$path is not a dictionary"
+fi
+
+
+# -e  check if the file is exist
+
+file=/tmp/shell/tmp/soft
+
+if [ -e $file ]
+then
+ echo "$file is exist"
+else
+ echo "$file is not exist"
+fi
+
+# -f check if the path is exist and is a file
+if [ -f $file ]
+then
+ echo "$file is exist and is a file"
+else
+ echo "$file is not exist or not a file"
+fi
+
+# -r check if the path is readable
+
+if [ -r $file ]
+then
+ echo "$file is readable"
+else
+ echo "$file is not readable"
+fi
+
+
+# -s check if the path is exist and not empty
+
+if [ -s $file ]
+then
+ echo "$file is exist and not empty"
+else
+ echo "$file is not exist or empty"
+fi
+
+
+# -w check if the path is writeable
+
+if [ -w $file ]
+then
+ echo "$file is writeable"
+else
+ echo "$file is not writeable"
+fi
+
+
+# -x check if the path is executeable
+
+if [ -x $file ]
+then
+ echo "$file is executeable"
+else
+ echo "$file is not executeable"
+fi
+
+
+# -O check if the path is belongs to current user
+
+if [ -O $file ]
+then
+ echo "$file is belongs to current user"
+else
+ echo "$file is not belongs to current user"
+fi
+
+
+# -G check if the path`s default group  is belongs to current user`s group
+
+if [ -G $file ]
+then
+ echo "the default group of $file  is belongs to current user`s group"
+else
+ echo "the default group of $file  is belongs to current user`s group"
+fi
+
+
+
+# file1 -nt file2  check if file1 is newer then file2
+file2=/var/www/index.php
+
+if [ $file -nt $file2 ]
+then
+ echo "$file is newer then ï$file2"
+fi
+
+
+# file1 -ot file2 check if file1 is older then file2
+
+if [ $file -ot $file2 ]
+then
+ echo "$file is older then $file2"
+fi
+
+
+# combine condition
+
+if [ -d $HOME ] && [ -w $file ]
+then 
+ echo "$HOME is dictionary and $file is writeable"
+fi
+
+
+if [ -d $HOME ] || [ -w $file ]
+then
+ echo "$HOME is dictionary or  $file is writeable"
+fi
+
+
+# (( ))  --,++
+
+abc=10
+
+if (($abc**2 > 90))
+then
+ ((bcd=$abc**2))
+echo "$abc squre is $bcd"
+fi
+
+
+# [[]]  reg match
+
+if [[ $USER == r* ]]
+then
+ echo is root
+else
+ echo is not root
+fi
+
+
+# case
+
+case $USER in
+ red | abc)
+   echo user is red or abc;;
+root)
+  echo user is root;;
+*) 
+  echo default;;
+esac
