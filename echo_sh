@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#it is the script to show : echo something to screen
+
+echo the first content
+echo 'echo thr "123"'
+echo "echo '456'"

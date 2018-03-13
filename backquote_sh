@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# backquote(fan yin hao) get an order`s result to assignment a variable
+
+# get order date result
+test=`date`
+
+echo $test
+
+
+today=`date +%y%m%d`
+
+echo $today

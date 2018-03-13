@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# pipe pass content between different command
+apt-cache search php | sort > /tmp/shell/tmp/soft

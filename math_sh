@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# math 
+
+# expr
+expr 5 + 7
+
+expr 5 \* 7
+
+# []
+var1=$[1 + 5]
+var2=$[$var1 * 6]
+
+echo $var1
+echo $var2
+
+# float use  bc
+
+# backquote  assignment the command`s result to a variable
+var3=`echo "scale=4; 3.24 / 7" | bc`
+
+echo the answer is $var3
+
+
+var4=777;
+var5=345;
+
+var6=`echo "scale=5; $var4 / $var5" | bc`
+echo $var6
+
+# complict math
+
+a1=7.46
+a2=5.77
+a3=6.37
+
+a5=`bc << EOF
+scale=4
+c1=($a1 * $a2)
+c2=($a1 / $a3)
+c3=($a2 / $a3)
+
+c1 + c2 + c3
+EOF
+`
+
+echo $a5
