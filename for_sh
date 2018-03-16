@@ -1,0 +1,83 @@
+#!/bin/bash
+
+for str in abc cdf gfd dsf yiu
+do
+  echo "current string is $str"
+done
+
+#  quote`s problem
+
+for quo in this is you\'u "they's"  and "new york"
+do 
+ echo "quote problem $quo"
+done
+
+
+# use the variable to hold the list
+
+list="abs sdf sdf wer hjk ggg vvv nnn jjj"
+# add value
+list=$list"ccc"
+list=$list" ttt"
+
+echo $list
+
+for code in $list
+do
+ echo $code
+done
+
+# read command result 
+file=/var/www/index.php
+
+for demo in `cat $file`
+do
+ echo $demo
+done
+
+# change bash`s default  separator to '\n'
+IFS=$'\n'
+
+for demo in `cat $file`
+do
+ echo $demo
+done
+
+
+# save old IFS value
+IFS.OLD=$IFS
+
+IFS='\n'
+
+# recover default value
+IFS=$IFS.OLD
+
+
+
+
+
+# wildcard
+
+for file in /tmp/shell/*
+do
+# use double quote because the file path is maybe contain space
+  if [ -d "$file" ]
+then
+ echo "$file is dictory"
+elif [ -f "$file" ]
+then
+ echo "$file is file"
+fi
+done
+
+
+
+
+
+
+
+
+
+
+
+i

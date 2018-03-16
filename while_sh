@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+var=10
+
+while [ $var -gt 0 ]
+do
+ echo $var
+ var=$[ $var - 1 ]
+done
+
+
+
+num=7
+# many test condition
+while echo $num 
+[ $num -gt 0 ]
+do 
+ echo this is loop
+ num=$[ $num - 1 ]
+done  

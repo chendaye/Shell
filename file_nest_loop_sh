@@ -1,0 +1,136 @@
+#!/bin/bash
+IFS.OLD=$IFS
+IFS=$'\n'
+
+for entry in `cat /etc/passwd`
+do
+  echo "value in $entry -"
+  IFS=':'
+  
+  for val in $entry
+  do
+   echo $val
+  done
+ echo '---------------------------------------------------------------------------------------\n'
+done
+
+
+
+# break
+# break out of for  loop
+
+for val in 1 23 4 5 6
+do
+  if [ $val -gt 4 ]
+  then
+   break
+  fi
+echo $val
+done
+
+
+# break out of while loop
+
+val1=1
+while [ $val1 -lt 10 ]
+do
+  if [ $val1 -eq 8 ]
+  then 
+   break
+  fi
+echo $val1
+val1=$[ $val1 + 1 ]
+done
+
+
+
+# break out of inner loop
+
+for (( x=1; x<12; x++ ))
+do  
+   echo "out loop $x"
+   for (( y=12; y>0; y-- ))
+   do
+     if [ $y -eq 5 ]
+     then
+      echo "inner loop $y"
+      break
+     fi
+   done
+
+done
+
+
+# break out of outer loop
+echo "\n break out of outer loop"
+
+for (( x=1; x<12; x++ ))
+do
+   echo "out loop $x"
+   for (( y=12; y>0; y-- ))
+   do
+     if [ $y -eq 5 ]
+     then
+      echo "inner loop $y"
+      break 2
+     fi
+   done
+
+done
+
+
+
+# continue
+for (( m=1; m<20; m++ ))
+do
+  if [ $m -gt 6 ] && [ $m -lt 15 ]
+  then
+   continue
+  fi
+ echo $m  
+done
+
+ 
+# whne use continue you have to be careful
+w=0
+while [ $w -lt 20 ]
+do
+ echo current $w
+  if [ $w -gt 5 ] && [ $w -lt 16 ]
+  then 
+   continue
+  fi
+  w=$[ $w + 1 ]
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
