@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# echo the result of loop  to other
+IFS.OLD=$IFS
+IFS=$'\n'
+
+for user in `cat /etc/passwd`
+do
+  IFS=':'
+  for val in $user
+  do
+   echo $val
+  done
+  echo ----------------------------------"\n"
+done > ./tmp/ouput.txt
+
+
+# pipe
+
+for v in a s d f g g d
+do
+ echo "sort the symbol $v"
+done | sort

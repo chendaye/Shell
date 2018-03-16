@@ -92,17 +92,34 @@ done
 
  
 # whne use continue you have to be careful
+# endless loop
 w=0
 while [ $w -lt 20 ]
 do
  echo current $w
   if [ $w -gt 5 ] && [ $w -lt 16 ]
   then 
-   continue
+ #  continue
+ echo $w
   fi
   w=$[ $w + 1 ]
 done
 
+
+# continue outer loop
+nu=1
+for (( v=$nu; v<20; v++ ))
+do
+  echo "outer loop $v"
+ for (( n=$v; n>0; n-- ))
+ do
+    echo "inner loop $n"
+    if [ $n -eq 12 ]
+    then 
+     continue 2
+    fi
+ done
+done
 
 
 

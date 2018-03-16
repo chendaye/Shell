@@ -10,3 +10,4 @@ for (( i=1,j=10; i<10; i++,j-- ))
 do
  echo i is $i / j is $j
 done
+
