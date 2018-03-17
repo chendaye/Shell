@@ -12,3 +12,47 @@ done
 
 
 
+total=$[ $1 * $2 ]
+echo $1
+echo $2
+echo $total
+
+
+# when the param more then 10 need use {}
+echo $9
+echo ${10}
+echo ${12}
+
+
+
+# read process`s name
+
+echo the "peocess" name is $0
+
+# only name no path
+
+name=`basename $0`
+echo $name
+
+
+# check param exist  when use it
+
+if [ -n $1 ]
+then
+ echo nice to meet you $i
+
+else
+ echo no param
+fi
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# record how many param are sypplied
+
+echo  $# param has
+
+
+# get last param
+
+echo the laet param is ${!#}
+
+
+
+# get all param
+
+echo $*   # all param tranver to one 
+echo $@   # all param separate  by space
+
+for param in $*
+do
+  echo $param
+done
+
+for param in $@
+do
+ echo $parm
+done

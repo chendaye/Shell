@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while [ -n "$1" ]
+do
+  case "$1" in 
+  -a) echo the option is -a;;
+  -b) echo the option is -b;;
+  -c) echo the option is -c;;
+   *) echo "$1 is not an option";;
+  esac
+ shift
+done
