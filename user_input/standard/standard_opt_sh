@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+# standard parameters
+
+for opt  in "$@"
+do 
+  case "$opt" in 
+  -a) echo show all obj;;
+  -c) echo count;;
+  -d) echo appoint dictionary;;
+  -e) echo open the obj;;
+  -f) echo appoint the file to read the data;;
+  -h) echo show help infomation;;
+  -i) echo ignore case;;
+  -l) echo long style echo;;
+  -n) echo use batch mode;;
+  -o) echo appiont a file to get the echo;;
+  -q) echo exec with quiet mode;;
+  -r) echo recursion to deal file or dictionary;;
+  -s) echo exec with silent mode;;
+  -v) echo generate verbose echo;;
+  -x) echo refuse or except;;
+  -y) echo yes?;;
+esac
+done

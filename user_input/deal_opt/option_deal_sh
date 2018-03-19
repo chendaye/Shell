@@ -1,0 +1,92 @@
+#!/bin/bash
+
+#while [ -n "$1" ]
+#do
+#  case "$1" in 
+#  -a) echo the option is -a;;
+#  -b) echo the option is -b;;
+#  -c) echo the option is -c;;
+#   *) echo "$1 is not an option";;
+#  esac
+# shift
+#done
+
+
+# option an param in the same time; use special symbol speretor
+# ./option_deal_sh -a -b -- 123 4656
+
+
+#while [ -n "$1" ]
+#do
+#  case "$1" in
+#  -a) echo the option is -a;;
+#  -b) echo the option is -b;;
+#  -c) echo the option is -c;;
+#  --) shift
+#      break;;
+#   *) echo "$1 is not an option";;
+#  esac
+# shift
+#done
+
+#count=1;
+
+#for param in $@
+#do 
+#  echo "$param"
+#  count=$[ $param + 1 ]
+#done
+
+
+
+
+# option with param
+
+while [ -n "$1" ]
+do
+  case "$1" in
+  -a) echo the option is -a;;
+  -b) param="$2"
+      echo the option is -b  with param "$param"
+      shift;;
+
+  -c) echo the option is -c;;
+  --) shift
+      break;;
+  *) echo "$1 is not an option";;
+  esac
+ shift
+done
+
+count=1;
+
+for param in "$@"
+do 
+  echo "$param"
+  count=$[ $param + 1 ]
+done
+
+
+# option with value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

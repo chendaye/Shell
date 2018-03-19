@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# getopts  getopts optstring variable
+
+# ./getopts_sh -ab 77 -c
+
+while getopts :ab:c opt
+do
+  case "$opt" in 
+  a) echo is option -a;;
+  b) echo is option -b with value $OPTARG;; # $OPTARG is the parameter of option
+  c) echo is option -c;;
+  *) echo no option $opt;;
+ esac
+done
+
+
+# $OPTIND  deal an option $OPTIND + 1
+
+shift $[ $OPTIND - 1 ]
+
+count=1;
+
+for param in "$@"
+do
+  echo "#$count $param"
+  count=$[ $count + 1 ]
+done
+

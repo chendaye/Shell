@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# tool getopts
+
+
+# getopt options optsting parameters  =>  getopt ab:cd -a -b param -cd parm1 parm2  =>  -a -b param -c -d  --  param1 param2 
+
+
+# $@ pass to getopst   then  getopts pass to set  command
+
+
+# example ./getopts_sh -ac eee fff =>  -a -c -- 'eee' 'fff'
+
+set -- `getopt -q ab:cd "$@"`
+
+echo "$@"
+
+while [ -n "$1" ]
+do
+  case "$1" in
+  -a) echo the option is -a;;
+  -b) param="$2"
+      echo the option is -b  with param "$param"
+      shift;;
+
+  -c) echo the option is -c;;
+  -d) echo the option is -d;;
+  --) shift
+      break;;
+  *) echo "$1 is not an option";;
+  esac
+ shift
+done
+
+count=1;
+
+for param in "$@"
+do 
+  echo "$param"
+  count=$[ $count + 1 ]
+done
+
