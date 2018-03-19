@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if read -t 3 -p "please input your name within 3 second:" name
+then
+  echo "vary good $name"
+else
+ echo 
+ echo "too slow"
+fi
+
+
+# -n  oppiont read the number of inout
+read -n3 -p "Do you want yo continue [Y/N]:" answer
+
+case "$answer" in 
+Y | y) echo
+       echo continue;;
+N | n) echo 
+       echo stop
+       exit;;
+esac
+

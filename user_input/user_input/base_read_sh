@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# -n opt
+echo -n "Enter your name:"
+
+read name
+
+echo hello $name
+
+# -p opt
+
+read -p "pelase enter your age:" age
+day=$[ $age * 365 ]
+echo your life is $day
+
+# REPLY  save user input
+
+read -p 'REPLY save the input?'
+
+echo $REPLY
+

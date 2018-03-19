@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# 0 => STDIN  1 => STDOUT  2 => STDERR
+
+# redirect msg to STDERR
+echo "this is an error" >&2
+echo "this is normal"
+
+
+#   ./temporary_redirect_sh 2> /tmp/shell/tmp/redirect
+
+# 'this is an error' to /tmp/shell/tmp/redirect
+# "this is normal" to screen

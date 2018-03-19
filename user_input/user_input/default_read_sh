@@ -1,0 +1,5 @@
+#!/bin/bash
+
+read -s -p "Enter your passwd:" passwd
+echo 
+echo your passwd is $passwd

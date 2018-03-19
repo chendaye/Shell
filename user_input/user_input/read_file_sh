@@ -1,0 +1,9 @@
+#!/bin/bash
+
+count=1
+cat /tmp/shell/tmp/soft | while read line
+do
+  echo 
+  echo "this is #$count $line"
+  count=$[ $count + 1 ]
+done
