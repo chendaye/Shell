@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# redirect input in script
+
+# get input from soft
+exec 0< /tmp/shell/tmp/soft
+
+count=1
+
+while read line
+do
+ echo "#$count  $line"
+ echo
+ count=$[ $count + 1 ]
+done
