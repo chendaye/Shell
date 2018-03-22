@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# storing STDOUT ,then coming back to it
+
+exec 3>&1
+
+exec 1>/tmp/shell/tmp/redirect_2
+
+echo "switch 1=3"
+
+# come back
+
+exec 1>&3
+
+echo "now is nomal"
+
+
+# storing STDIN 
+
+exec 6<&0
+
+exec 0</tmp/shell/tmp/soft
+
+count=1
+while read line 
+do
+  echo "#$count $line"
+  echo 
+  count=$[ $count + 1 ]
+done
+
+exec 0<&6
+read -p  "is successful:" answer
+
+case $answer in
+Y|y) echo "good";;
+N|n) echo "fail";;
+esac
+

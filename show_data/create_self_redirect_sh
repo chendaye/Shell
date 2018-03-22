@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# 0 -> STDIN  1 -> STDOUT 2 -> STDERR
+
+exec 3>/tmp/shell/tmp/self_redirect_1
+
+
+echo "create self redirect">&3
