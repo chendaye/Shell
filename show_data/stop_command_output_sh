@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# stop command output and don`t save the output
+
+ls -al>/dev/null
+
+cat /dev/null
+
+

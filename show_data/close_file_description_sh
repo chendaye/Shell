@@ -1,0 +1,13 @@
+#!/bin/bash
+
+exec 3> /tmp/shell/tmp/close
+
+echo "close file description" >&3
+
+# close
+exec 3&-
+
+
+echo  "has closed the description symbol 3"
+
+

@@ -6,3 +6,70 @@ exec 3>/tmp/shell/tmp/self_redirect_1
 
 
 echo "create self redirect">&3
+
+
+# redirect file description symbol
+
+
+# 3 redirect to 1
+exec 3>&1
+exec 1>/tmp/shell/tmp/self_redirect_2
+
+echo "redirect file description"
+
+
+echo "still on STDOUT" >&3
+
+# recover redirect
+exec 1>&3
+
+
+
+# filr inputin description symbol
+
+
+exec 6<&0
+
+#get from  file
+exec 0</tmp/shell/tmp/soft
+
+count=0
+
+while read line
+do
+  echo $line
+  echo 
+  count=$[ $count + 1 ]
+done
+
+
+exec 0<&6
+
+read -p "you are pig ?" answer
+case $answer in
+ Y) echo good;;
+ N) echo no;;
+esac
+
+
+
+
+
+# in and out with  same symbol
+exec 5<> /tmp/shell/tmp/soft
+
+# out
+read line  <&5
+
+echo "read $line"
+
+# in
+echo "input  content" >&5
+
+
+
+
+
+
+
+

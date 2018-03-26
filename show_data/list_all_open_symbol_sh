@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# list all of the opend description symbol
+
+/usr/sbin/lsof

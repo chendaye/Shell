@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# save file name
+tempname=`mktemp chendaye666.XXXXX`
+
+ls -al /tmp | grep chendaye*
+
+
+
+exec 3>$tempname
+
+echo 'redirect to tempname'
+
+# close symbol
+exec 3>&-
+
+cat $tempname
+
+
+# del temp file  and don`t output msg
+
+rm -f $tempname> /dev/null
+
+
+# point path
+
+temp=`mktemp /tmp/shell/tmp/chendaye666.XXXXXX`
+
+
+
+echo $temp
+
+cat $temp 
