@@ -31,3 +31,60 @@ temp=`mktemp /tmp/shell/tmp/chendaye666.XXXXXX`
 echo $temp
 
 cat $temp 
+
+
+# make temporary dictionary
+
+cd /tmp/shell/tmp/
+
+
+tempdir=`mktemp -d chendaye666.dir.XXX`
+
+cd $tempdir
+
+current=`pwd`
+
+
+
+
+echo
+echo
+echo
+
+echo $tempdir
+
+echo $current
+
+
+cd $current
+
+tempfile1=`mktemp tempfile1.XXX`
+tempfile2=`mktemp tempfile2.XXX`
+
+exec 4> $tempfile1
+exec 5> $tempfile2
+
+echo "send data to tempfile"
+
+echo "tempfile1" >&4
+echo "tempfile2" >&5
+
+ls $current
+
+cat $tempfile1
+cat $tempfile2
+
+
+
+
+# show the data of  STDIN  on STDOUT (screen)  in the same time , save it to  a  file
+
+date | tee $tempfile1
+
+echo
+echo
+cat $tempfile1
+
+
+
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# trap command can capture signal 
+
+
+trap  "echo 666666666" SIGINT SIGTERM
+
+echo "this is test program"
+
+
+
+count=1
+
+while [ $count -le 10 ]
+do
+ echo "loop #$count"
+
+ sleep 5
+ count=$[ $count + 1 ]
+done
+
+echo "this is end"
