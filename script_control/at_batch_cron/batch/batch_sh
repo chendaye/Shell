@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# command batch is differet  with at, it do not run in pointed time, instead it run when system load is low
+
+# batch run job  when system lower 0.8
+
+echo "command format  : batch [ -f filename ] [ time ]"
+
