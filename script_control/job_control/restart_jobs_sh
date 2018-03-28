@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "bg job-number  -> restart job in backstage"
+
+echo "fg job-number  -> restart job in foreground"

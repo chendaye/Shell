@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# command nice to change job scheduling-priority  from -20 to 20
+
+
+# to reduce job`s scheduling-priority when the job start
+nice -n 10 ../view_jobs_sh

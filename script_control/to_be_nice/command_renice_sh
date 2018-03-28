@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+# command renice change the scheduking-priority that has been run
+echo "example  renice 10 -p PID"
