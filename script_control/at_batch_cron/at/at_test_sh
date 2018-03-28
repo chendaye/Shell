@@ -1,0 +1,5 @@
+#!/bin/bash
+
+con=`date`
+
+echo $con>test_out

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# at : at [ -f filename ] time
+# atd  run in backstage
+
+echo "time format"
+
+echo "10:15"
+echo "10:15AM 10:15PM"
+echo "now noon midnight teatime(4PM)"
+echo "MMDDYY MM/DD/YY DD.MM.YY"
+echo "Jul 4  Dec 25"
+echo "Now + 25 minutes       10:15PM tomorrow   10:15 + 7 days"
+
+
+
+# jobs  schduling-priority  from a to z   default a
+# example to point schduling-priority  :  at -q a
+
+
+
+# get jobs output
+
+time=`date +%T`
+echo "The script run at $time"
+
+
+at -f at_test_sh Now + 1 minutes
+
+
+
+# atq : show all the jobs in the queue
+
+queue=`atq`
+
+echo
+echo $queue
+
+
+# atrm :  remove jobs from the queue
+
+atrm 4
+
+echo 
+echo $queue
