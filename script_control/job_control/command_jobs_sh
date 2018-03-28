@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "jobs option"
+
+echo
+echo "-l  show PID and job number"
+
+echo 
+echo "-n show jobs that has been changed "
+
+echo 
+echo "-p show PID"
+
+echo 
+echo "-r show jobs that are running"
+
+echo
+echo "-s show jobs that are stopped"

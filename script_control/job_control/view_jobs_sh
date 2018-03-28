@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+# $$  is PID
+
+echo "this is test program $$"
+
+n=1
+
+while [ $n -le 10 ]
+do
+  echo "Loop #$n"
+  sleep 1
+  n=$[ $n + 1 ]
+done
+
+echo "the end"
+
+

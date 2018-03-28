@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# backstage run
+./test_backstage_sh &
