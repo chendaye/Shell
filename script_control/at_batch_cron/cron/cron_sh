@@ -3,4 +3,46 @@
 # cron run jobs everyday in pointed time
 
 
+# command format : min hour dayofmonth  month  dayofweek command
+
+
+echo "example :  15 10 * * * command  -> run job everyday in 10:15"
+
+echo 
+
+echo "example : 15 10 * * 1 command  -> run job everyweek in monday 10:15"
+
+echo 
+
+echo "example : 00 12 1 * * command -> run job everymonth in firstday 12:00"
+
+echo 
+echo "example run job in the last day of month :  00 12 * * * if [ `date +%d -d tomorrow` = 01 ] ; then ; command" 
+
+# tip
+
+echo "need to check power"
+
+# 15 10 * * * /var/www/Shell/tmp/soft > /var/www/Shell/tmp/soft.bak
+
+
+# list all cron for current user
+crontab -l
+
+# edit cron
+crontab -e
+
+
+# anacron : when linux system is shutdown   /etc/anaceontab
+
+echo 
+echo "period delay identifier command"
+
+echo "period : how long to run job"
+echo "delay : delay how much time to run job"
+echo "identifier : "
+
+
+
+
 
