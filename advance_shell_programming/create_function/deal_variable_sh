@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# global variable  define out of function
+
+var=123
+
+fun1() {
+  echo $[ $var * 2 ]
+}
+
+ret=`fun1`
+echo $ret
+
+# local variable
+
+fun2() {
+  
+  local var=6
+  if [ $# -eq 1 ]
+  then
+   echo $[ $var + $1 ]
+  else 
+   echo $var
+  fi
+}
+echo
+ret=`fun2 4`
+echo $ret
+echo
+ret=`fun2`
+echo $ret
+
+echo
+echo $var
+

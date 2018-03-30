@@ -1,0 +1,35 @@
+#!/bin/bash
+
+exit_status() {
+  ls -l /etc
+}
+
+exit_status
+echo
+
+# $?  function exit status  0:success 1:fail     $? have to < 256
+echo "the exit status is $?"
+
+
+
+
+# return
+
+fun_return() {
+  read -p "input a int :" val
+  echo "doubel val"
+  return $[ $val * 2 ]
+}
+
+fun_return
+echo "status $?"
+
+
+fun() {
+  read -p  "enter val:" value
+  echo $[ $value * 12 ]
+}
+
+result=`fun`
+echo 
+echo $result

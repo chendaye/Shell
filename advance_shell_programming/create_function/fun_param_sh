@@ -1,0 +1,60 @@
+#!/bin/bash
+
+
+# $#  is the number of param
+function param {
+ if [ $# -eq 0 ] || [ $# -gt 2 ]
+ then
+  echo -1
+ elif [ $# -eq 1 ]
+ then
+   echo $[ $1 + $1 ]
+ else
+  echo $[ $1 + $2 ]
+ fi
+   
+}
+
+
+echo -n " add 10 and 12"
+value=`param 10 12`
+echo
+echo $value
+echo 
+
+
+echo -n "add 10"
+value=`param 10`
+echo
+echo $value
+echo
+
+
+echo -n "add null"
+value=`param`
+echo
+echo $value
+echo
+
+echo -n "add more than 2"
+value=`param 12 34 56`
+echo 
+echo $value
+echo
+
+
+# use environment variable in function
+
+param2() {
+ echo $[ $1 + $2 ]
+}
+
+val=`param2 $1 $2`
+echo 
+echo $val
+
+
+# ./fun_param_sh 1 2  -> $1 = 1 $2 = 2
+
+
+

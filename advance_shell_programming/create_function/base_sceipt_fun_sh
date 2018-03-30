@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# method 1
+
+function fun_1 {
+  echo "this is fun_1"
+}
+
+
+# method 2
+
+fun_2() {
+ echo "this is fun_2"
+}
+
+fun_1
+
+echo 
+
+fun_2
