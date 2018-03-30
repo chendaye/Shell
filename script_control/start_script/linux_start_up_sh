@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo "
+1, linux core load to memory
+
+2, run program /sbin/init PID 1   /sbin/init to start up other process
+
+3, /sbin/init to read file /etc/inittab , /etc/inittab  list the script that to run linux on different level
+   linux run level:
+                   0 : stop
+                   1 : single user mode
+                   2 : many user mode, usually there is not network
+                   3 : many user mode, there is network
+                   4 : no used
+                   5 : many user mode, there is network and X-Window 
+                   6 : reboot
+   usually, run on 3  and 5
+
+
+4, script rc  determines which level  to run a program  
+
+5, startup script : provide necessay environment path  for running program
+   different  linux version put startup script to different catalog, for example: /etc/rc.d  /etc/init.d  /etc/init.d/rc.d
+
+
+6, local startup script : 
+   different  linux version put local  startup script to different catalog, for example: /etc/init.d/rc.local   /etc/rc.d/rc.local  /etc/init.d/boot.local
+
+
+"
+
+
+echo 
+
+echo "
+1, every user main catalog have .bash_profile  and .bashrc  to startup script and set environment path
+
+2, .bash_profile : user want to run script when login
+
+3, .bashrc : run .bashrc when bash startup
+"
