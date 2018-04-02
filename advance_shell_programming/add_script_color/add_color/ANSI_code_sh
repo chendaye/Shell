@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# SGE mode : CSIn;km
+
+# m is SGR escape code
+
+# n or k is  show control
+  > effect control
+  > front color control
+  > background color control
+
+
+# ANSI SGR
+
+# code     description
+
+# 0        Reset to common pattern
+# 1        Strong brightness
+# 2        Weak brightness
+# 3        Use italic
+# 4        Usingle line
+# 5        Slow flashing
+# 6        Fast flashing
+# 7        Front and background color reverse
+# 8        Front collor = background color , can not see the word
+
+# ANSI color code
+
+# code     description
+
+# 0        black
+# 1        red
+# 2        green
+# 3        yellow
+# 4        blue
+# 5        magenta
+# 6        cyan-blue
+# 7        white
+
+
+# example 1 : CSI3;5m -> "Use italic" and "Slow flashing"
+
+# color control is two num, 3* is front color  4* is background color
+
+# example 2 : CSI31;40 -> front color is "red" and background is "black"
+# example 2 : 
+
+
+
+

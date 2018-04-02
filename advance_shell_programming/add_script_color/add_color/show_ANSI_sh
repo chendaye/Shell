@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Ctrl-V Esc  = ^[
+clear
+echo In script a ANSI like ^[[0m
+
+echo 
+
+echo ^[[33mThis is test
+
+# the change of  ANSI  is always effect until an other command change setting
+
+# to aviod this problem : ^[[0m  to reset change 
+
+echo ^[[2mThis is test^[[0m
+
+
+echo  reset change
+
