@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# bash shell can create lib file , it can be used everywhere
+
+
+# use the lib file  use command source (alias-> .)
+
+# source ./lib_test
+
+. ./lib_test
+
+ret1=`libfun_1`
+ret2=`libfun_2`
+
+echo $[ $ret1 + $ret2 ]

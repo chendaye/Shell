@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+# 5! = 1 * 2 * 3 * 4 * 5
+
+recursion() {
+  if [ $1 -eq 1 ]
+  then 
+    echo 1
+  else
+    local temp=$[ $1 - 1 ]
+    local ret=`recursion $temp`
+    echo $[ $ret * $1 ]  
+  fi
+}
+
+
+read -p "Enter value :" val
+
+ret=`recursion $val`
+echo $ret

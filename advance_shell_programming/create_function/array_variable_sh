@@ -1,2 +1,64 @@
 #!/bin/bash
 
+# array in function
+
+arr() {
+  echo "the parameters is: $@"
+  array=$1
+	
+  # only get first value
+  echo "the array is ${array[*]}"
+}
+
+
+myarray=(1 2 3 4 5 6)
+
+# only get first value
+echo "the original array is  ${myarray[*]}"
+
+echo 
+
+ret=`arr ${myarray[*]}`
+echo $ret
+echo 
+
+# get all of the value from array
+
+arr2() {
+ local array
+ # create a new array
+ array=(`echo "$@"`)
+ echo "the array is ${array[*]}"
+}
+
+ret=`arr2 ${myarray[*]}`
+echo $ret
+
+
+
+# return array from function
+
+arr3() {
+  local origarr
+  local newarray
+  local elements
+  local i
+
+  origarr=(`echo "$@"`)
+  newarray=(`echo "$@"`)
+  elements=$[ $# - 1 ]
+  
+  for ((i = 0; i <= $elements; i++ ))
+  {
+    newarray[$i]=$[ ${origarr[$i]} * 2 ]
+  }
+  
+  echo ${newarray[*]}
+}
+
+ret=`arr3 ${myarray[*]}`
+echo 
+echo $ret
+
+
+

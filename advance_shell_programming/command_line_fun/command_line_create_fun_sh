@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# example 1  have to add ";"
+$ function div{ echo $[ $1 / $2 ]; }
+
+$ div 36 6
+
+# example 2
+
+$ function span{
+> echo $[ $1 / $2 ]
+> }
+
+$ span 36 6

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# write function in /etc/.bsahrc
+
+function bash_fun {
+ echo 'test'
+}
+
+
+# source other lib file
+. /var/www/Shell/advance_shell_programming/create_lib/lib_test
+
+
+

@@ -1,0 +1,12 @@
+# my lib
+
+libfun_1() {
+  echo 777;
+}
+
+libfun_2() {
+  echo 888;
+}
+
+
+
