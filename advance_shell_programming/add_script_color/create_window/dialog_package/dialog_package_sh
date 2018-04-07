@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# dialog is a soft to create window for user, it has many tool to deal different work
+
+
+
+# calendar -> a calendar to choose date
+
+
+# checklist -> show tabs and these tab can be closed open
+
+
+# form -> create a form
+
+
+# fselect -> create a window that to view file to choose file
+
+# gauge -> show percentage
+
+# infobox -> show infomation and don`t wait response
+
+# inputbox -> show a input to input infomation
+
+# inputmenu -> a menu that can be edited
+
+# msgbox -> show a msg and ask user to click OK
+
+# pause -> show point a pause status
+
+# passwordform -> show a input and a password input
+
+# passwordbox -> show a input that can hidden word
+
+# radiolist -> many option but can only choose one
+
+# tailbox -> use tailcommand show text
+
+# tailboxbd -> like tailbox  but  in background mode
+
+# texbox -> show text in roll win
+
+# timebox -> a win to choose hour minute second
+
+# yesno -> button yes or no

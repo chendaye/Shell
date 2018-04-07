@@ -1,19 +1,25 @@
 #!/bin/bash
 
-# Ctrl-V Esc  = ^[
+# Ctrl-V Esc  = \033
 clear
-echo In script a ANSI like ^[[0m
+echo -e " In script a ANSI like \033[0m"
 
 echo 
 
-echo ^[[33mThis is test
+echo -e "\033[33mThis is test"
 
 # the change of  ANSI  is always effect until an other command change setting
 
 # to aviod this problem : ^[[0m  to reset change 
 
-echo ^[[2mThis is test^[[0m
+echo -e "\033[2mThis is test\033[0m"
+
+
+
+echo -e "\033[32;43mThis is test\033[0m"
 
 
 echo  reset change
+
+
 
