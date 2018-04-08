@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+# sed : stream edit
+
+# command format : sed options script file
+
+# -e script  : add command that script apiont to deal input command
+
+# -f file : add command that file apoing to deal input command
+
+# -n : don`t need to echo every comamnd`s output, but need to wait print
+
+
+# define edit command in command line
+
+# replace test with first test
+echo "This is test" | sed 's/test/first test/'
+
+
+# many command
+
+
+echo 
+
+echo "This is pig" | sed -e 's/is/is not/; s/pig/dog/'
+
+echo 
+
+sed -e 's/is/is not/;  s/pig/dog/' test
+
+
+# read command from file
+
+echo 
+
+sed -f script test

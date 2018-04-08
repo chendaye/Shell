@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# format : dialog --msgbox text height width
+
+
+
+dialog --title "Test msgbox" --msgbox "it is test" 10 20

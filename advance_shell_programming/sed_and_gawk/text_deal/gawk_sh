@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# gawk command format : gawk options program file
+
+
+# -F fs :  apoint separate symbol
+
+# -f file : apoint file name that want to read
+
+# -v var=value : define variable and default value
+
+# -mf N : apoint field  max number that need to be deal in data-file
+
+# -mr N : apoint max record that need to be deal in data-file
+
+# -w keyword : apoint gawk warnning level
+
+
+# example
+
+gawk '{print "hello chendaye666"}'
+
+
+# gawk need wait STDIN input, when input something press Enter ,gawk will use define param deal input
+
+
+# gawk variable
+
+# gawk distribution variable to every field that has been checkout 
+
+# $0 : represent all line
+# $1 : represent the first field in the text
+# $n : represent the N field in the text
+
+gawk '{print $1}' test
+
+
+echo
+# apoint seprate symbol
+
+gawk -F: '{print $1}' /etc/passwd
+
+
+
+
+
+echo 
+
+# use many command
+echo "My name is chendaye666" | gawk '{$4="Rich"; print $0}'
+
+
+echo
+# read program from script
+gawk -F: -f script2 /etc/passwd
+
+
+
+
+
+
+
+
+

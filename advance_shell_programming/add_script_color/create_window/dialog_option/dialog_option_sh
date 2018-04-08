@@ -1,0 +1,107 @@
+#!/bin/bash
+
+# --add-widged  press ESC or Cancel,otherwise go next dialogue
+
+# --aspect ratio : apoint length/width
+
+# --backtitle title :  apoint add title on top or backgroung
+
+# --begin x y : apiont position
+
+# --cancel-label label : apoint a label that can be choose for cancel
+
+# --clear : clear sceen
+
+# --color : use ANSI code
+
+# --cr-wrap : add wrap
+
+# --create-re file : save conf file to an apoint file
+
+# --defaultno : yesno default no
+
+# --default-item string : apoint option
+
+# --exit-label label : apoint Exit button apoint a label that can be choose
+
+# --extra-button : add a button between OK and Cancel
+
+# --extra-label label : apoint label that can be choose for Extra button
+
+# --help : show help infomation
+
+# --help-button : add help button between OK and Cancel
+
+# --help-label label  : apoint label that can be choose for help button
+
+# --help-status : record form infomation when choose help
+
+# --ignore : ignore option that dialog can not recognition
+
+# --input-fd fd : apiont other description symbol except STDIN
+
+# --insecure : password show as *
+
+# --item-help : add help info for item in buttom
+
+# --keep-window : don`t clear old dialog
+
+# --max-input size : apoint max string thet can be input
+
+# --nocancel : forbiden cancel button
+
+# --no-collapse : don`t switch tab to space
+
+# --no-kill : set tailboxbg in background an forbiden it SIGHUP
+
+# --no-label label : apoint a label that can be choose for no button
+
+# --no-shadow : don`t show shadow for dialogue
+
+# --ok-label label : apoint a label that can be choose for ok button
+
+# --output-fd fd : apoint description symbol except STDERR
+
+# --print-maxsize : print dialogue max size
+
+# --print-size : every dialog print to output
+
+# --print-version : dialogue version pringt to output
+
+# --separator-output : echo checklist result one by one 
+
+# --separator string : apoint string to separate ret
+
+# --seoarator-widget string : apoint string to separate ret
+
+# --shadow : show shadow
+
+# --singel-quoted : use singel quoted check output when need
+
+# --sleep sec : delay apoint second after deal dialogye
+
+# --stderr : send output to STDERR (that is default)
+
+# --stdout : send output to STDOUT
+
+# --tab-correct : wrap switch to space
+
+# --tab-len n : apoint the space  number of tab
+
+# --timeout-sec sec : timeout second when no user input
+
+# --title title : add title for dialogue
+
+# --trim : remove the wrap and space where head of string
+
+# --visit-items : alert tab to contain item
+
+# --yes-label label : apoint a label that can be choose for yes label
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+dialog --title "select a file" --fselect $HOME/ 10 50 2>test3

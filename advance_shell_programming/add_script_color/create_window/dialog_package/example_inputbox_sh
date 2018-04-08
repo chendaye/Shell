@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# format : dialog --tool parameters
+
+dialog --inputbox "\033[32;42mEnter your name:\033[0m"10 20 2>test1
+
+
+
+
+
+
+
+
+
+
+
+
+
+

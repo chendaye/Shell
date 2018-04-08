@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+
+dialog --menu "Sys admin menu" 20 30 10 1 "Display disk space" 2 "Display user" 3 "Display memory usage" 4 "Exit" 2>test2
