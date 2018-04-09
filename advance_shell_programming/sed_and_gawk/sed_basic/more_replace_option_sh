@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#  sed more replace option
+
+echo -e "\033[31;45m sed more replace option \033[0m"
+
+# replace flag  : s/pattern/replacement/flags
+
+# number : replace N 
+# g : replace all
+# p : print origin content
+# w file : write result to file
+
+# number
+echo "chen chen chen" | sed "s/chen/daye666/2"
+
+# g
+echo "chen chen chen" | sed "s/chen/daye666/g"
+
+# p
+echo "chen chen chen" | sed "s/chen/daye666/p"
+
+# w
+echo "chen chen chen" | sed "s/chen/daye666/w result"
+
+
+echo 
+
+# \/ trans
+echo "/abc/def/" | sed "s/\/abc\//222-/"
+# change separete symbol
+echo "/abc/def/" | sed "s!/abc/!222-!"
+

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+
+# deal apoint line need address
+# find address method
+
+# addressing method
+
+
+# 1: line number
+
+# 2: reg metch
+
+echo -e "\033[47m number address \033[0m"
+
+
+# first line number :  1
+sed '2s/this/666/' test
+
+
+echo 
+
+sed '2,3s/this/666/' test
+
+
+
+
+echo 
+# pattern match : /pattern/command
+
+echo "chen da ye 666" | sed '/chen/s/chen/Chen/' 
+
+
+echo 
+
+# combination command
+
+sed '2{
+s/this/t/;
+s/is/i/
+}' test
+
+
+

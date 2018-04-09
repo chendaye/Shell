@@ -36,7 +36,9 @@ gawk '{print $1}' test
 
 
 echo
+
 # apoint seprate symbol
+echo -e "\033[34mapoint seprate symbol\033[0m"
 
 gawk -F: '{print $1}' /etc/passwd
 
@@ -47,18 +49,34 @@ gawk -F: '{print $1}' /etc/passwd
 echo 
 
 # use many command
+echo -e "\033[34m use many command \033[0m"
 echo "My name is chendaye666" | gawk '{$4="Rich"; print $0}'
 
 
 echo
 # read program from script
+echo -e "\033[34mread program from script\033[0m"
 gawk -F: -f script2 /etc/passwd
 
 
 
 
+echo
+
+# run script before deal data
+echo -e "\033[34mrun script before deal data\033[0m"
+gawk 'BEGIN {print "hello world"}'
 
 
+echo 
+# if want to deal data when  use BEGIN, need to use another {}
+echo -e "\033[35m if want to deal data when  use BEGIN, need to use another {} \033[0m"
+
+echo "chendaye666" | gawk 'BEGIN {print "hello world"} {print $0}' 
 
 
+echo 
+# run script after deal data
+echo -e "\033[36m run script after deal data \033[0m"
 
+echo "chendaye666" | gawk 'BEGIN {print "hello world"} {print $0} END {print "ByeBye"}'
