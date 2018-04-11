@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# 区分大小写  空格和其他字符一样处理
+echo "This is test" | sed -n '/test/p'
+echo "This is Test" | sed -n '/test/p'
+
+echo 'Test is test' | gawk '/test/{print $0}'
+echo 'Test is Test' | gawk '/test/{print $0}'
+
+
+
+

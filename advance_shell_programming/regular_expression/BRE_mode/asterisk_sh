@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+clear 
+
+# * 放在某字符后面标识不出现或者出现多次
+
+
+echo 'choose' | sed -n '/cho*se/p'

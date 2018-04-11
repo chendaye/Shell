@@ -1,0 +1,23 @@
+#!/bin/bash
+
+clear
+# 字符类 定义一类字符来匹配文本中的某一位置
+
+echo 'yes' | sed -n '/[Yy]es/p'
+echo 'Yes' | sed -n '/[Yy]es/p'
+echo 'ces' | sed -n '/[Yy]es/p'
+
+
+echo '798' | sed -n '/[234]/p'
+
+echo '2789' | sed -n '/[234]/p'
+
+
+# 否定字符类
+
+echo no
+
+# 匹配除了 789 外的任意字符
+echo '798' | sed -n '/[^789]8/p'
+
+echo '123' | sed -n '/[^78]/p'

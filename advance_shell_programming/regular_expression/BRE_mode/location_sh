@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# 从头开始  ： ^
+
+echo 'this is book' | sed -n '/^book/p'
+echo 'book is great' | sed -n '/^book/p'
+
+# 如果将 ^ 不放在模式的开头 它就是普通字符
+
+echo 'this ^ is test' | sed -n '/s ^ i/p'
+
+
+# 结尾 : $
+echo 'this is book' | sed -n '/book$/p'
+echo 'book is great' | sed -n '/book$/p'
+
+
+# 联合定位
+echo '123456789' | sed -n '/^234$/p'
+echo '123456789' | sed -n '/^123456789$/p'
+
+
+# 删除空行
+echo 'line 1
+
+line 2
+
+line 3
+
+line 4' | sed '/^$/d'
+
+
+

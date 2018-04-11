@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+# format : [adress]y/inchars/outchars/
+
+# inchars switch to outchars one by one
+
+# the length of inchars and outchars have to be same
+
+
+# 1 switch to 7 ;  2 switch to 8 ; 3 switch to 9
+sed 'y/123/789/' test2
+
+

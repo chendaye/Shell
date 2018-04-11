@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sed '3c\fuck you' test2
+
+echo
+
+sed '/3/c\fuck you' test2

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+# i : add front
+# a : add after
+
+
+
+
+echo "test" | sed 'a\fuck you lin'
+
+
+echo 
+
+
+echo "test" | sed 'i\fuck you lin'
+
+echo 
+
+sed '3i\insert insert' test2
+
+echo 
+
+sed '3a\ insert insert' test2
+

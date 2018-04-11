@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# don`t change origin file, del from sed output
+
+sed 'd' test2  
+
+sed '3d' test2
+
+sed '3,4d' test2
+
+sed '4,5d' test2
+
+# partten
+echo
+sed '/2/d' test2
+
+
+# many partten
+
+echo
+sed '/1/,/2/d' test2
+
+echo
+# del all can`t find /9/
+sed '/1/,/9/d' test2
+
+
+
+
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+clear
+
+# 使用范围
+echo '678' | sed -n '/^[6-8][7-8][9]$/p'
+
+echo '679' | sed -n '/^[6-8][7-8][9]$/p'
+
+# 多个非连续的范围
+
+echo 'eat you' | sed -n '/^[a-cd-f]/p'
+
+echo 'gat you' | sed -n '/^[a-cd-f]/p'
+
+
+echo 'bat you' | sed -n '/^[a-cd-f]/p'
