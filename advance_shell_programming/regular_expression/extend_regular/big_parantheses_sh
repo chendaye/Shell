@@ -1,0 +1,22 @@
+#!/bin/bash
+
+clear
+
+# 大括号： {m} 正好出现m次  {m,n} 最少出现m次，最多出现n次
+
+# --re-interval 让gawk程序识别正则表达式间隔
+
+echo 'bt' | gawk --re-interval '/be{1}t/{print $0}'
+echo 
+
+echo 'beet' | gawk --re-interval '/be{1}t/{print $0}'
+
+echo 
+
+echo 'bet' | gawk --re-interval '/be{1}t/{print $0}'
+
+
+echo 
+
+
+echo 'bfuckt' | gawk --re-interval '/bf[uc]{1,2}kt/{print $0}'

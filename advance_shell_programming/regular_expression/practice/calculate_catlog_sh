@@ -1,0 +1,26 @@
+#!/bin/bash
+
+clear
+
+# 对 PATH 环境变量中定义的目录中的可执行文件进行计数
+
+# 获取环境变量里添加的目录
+mypath=`echo $PATH | sed 's/:/ /g'`
+
+count=0
+# 遍历目录
+
+for directory in $mypath
+do
+ # 获取目录里面的文件
+ check=`ls $directory`
+ # 遍历目录里面的文件 
+ for item in $check
+ do
+  # 输出重定向到 文件
+  echo "$check \n" > file
+  count=$[ $count + 1 ]
+ done
+ echo "$directory 有 $count 个可执行文件"
+ count=0
+done

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+clear
+
+# 正则表达式分组
+
+# 使用圆括号分组，进行模式分组时，一个分组作为一个标准的字符处理
+# 可以像将特殊字符应用于正常字符一样，将特殊字符应用于组合
+
+echo 'Sta' | gawk '/Sta(urday)?/{print $0}'
+
+echo 
+
+
+echo 'fuck' | gawk '/f(a|u)c(k|j)/{print $0}'

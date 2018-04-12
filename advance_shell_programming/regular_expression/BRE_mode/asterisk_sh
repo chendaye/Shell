@@ -7,3 +7,7 @@ clear
 
 
 echo 'choose' | sed -n '/cho*se/p'
+
+
+
+echo 'change' | sed -n '/cha[ng]*e/p'

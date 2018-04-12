@@ -1,0 +1,19 @@
+#!/bin/bash
+
+clear
+
+# 加号 + ： 至少出现一次
+
+
+echo 'beeef' | sed -n '/be+f/p'
+
+echo 
+
+echo 'beeef' | sed -n '/b[e]+f/p'
+
+echo 'gawk' 
+
+echo 'beef' | gawk -n '/be+f/{print $0}'
+
+echo
+echo 'beef' | gawk -n '/b[e]+f/{print $0}'

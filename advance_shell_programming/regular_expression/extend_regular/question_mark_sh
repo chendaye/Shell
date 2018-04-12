@@ -1,0 +1,11 @@
+i#!/bin/bash
+
+clear
+
+# 问号 ： 出现一次或者不出现
+
+echo 'fuck' | gawk '/fuce?k/{print $0}'
+
+echo 
+
+echo 'fuck' | gawk '/fu[a-z]k/{print $0}'

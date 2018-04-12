@@ -1,0 +1,12 @@
+#!/bin/bash
+
+clear
+
+# 管道符号 | ： 逻辑 或i
+
+echo 'it is dog or cat or pig' | gawk  '/dog|cow/{print $0}'
+
+echo 
+
+echo 'it is dog or cow' | gawk '/cat|fish/{print $0}'
+
