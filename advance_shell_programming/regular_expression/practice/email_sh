@@ -1,0 +1,12 @@
+#!/bin/bash
+
+clear
+
+# email 正则匹配
+
+
+
+# 邮件基本格式   username@hostname
+
+
+echo 'chendaye666@gmail.com' | gawk --re-interval  '/^([a-zA-Z0-9_\-\.\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/{print $0}'
