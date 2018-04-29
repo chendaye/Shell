@@ -1,0 +1,27 @@
+#!/bin/bash
+clear
+
+# 默认情况下sed编辑器将脚本的输出结果重定向到STDOUT
+# 可以在shell 脚本中使用所有标准方法来重定向sed编辑器的输出
+
+# 可以用反引号将sed编辑器命令的输出结果重定向到一个变量， 以便在后面的脚本中使用
+
+factory=1
+counter=1
+number=$1
+
+while [ $counter -le $number ]
+do
+  factory=$[ $factory * $counter ]
+  counter=$[ $counter + 1 ]
+done 
+
+
+# 用sed给字符串添加逗号
+result=`echo $factory | sed '
+:start
+s/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;
+t start
+'`
+
+echo $result

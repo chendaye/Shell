@@ -1,0 +1,27 @@
+#!/bin/bash
+
+clear
+
+# sed 编辑器使用圆括号定义替换模式中的子字符串元素，然后再替换模式中使用特定的符号来运用子字符串元素
+# 替换字符串由反斜杠和数字组成
+# 数字表示子字符串元素的位置
+# sed编辑器将第一个元素分配为字符 \1 以此类推 \2 \3 \4
+
+# 在替换命令中使用圆括号必须使用转义字符，表示它们是分组字符
+
+echo 'The system is vary great' | sed 's/\(system\) is/\1 are/'
+
+echo 
+
+echo 'The furry cat is pretty' | sed 's/furry \(.at\)/\1/'
+
+
+# 在文本中插入两个或多个子字符串
+echo
+
+echo '123456890' | sed '
+:start;
+s/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;
+t start
+'
+

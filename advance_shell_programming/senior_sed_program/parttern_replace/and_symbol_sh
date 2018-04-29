@@ -1,0 +1,17 @@
+#!/bin/bash
+
+clear
+
+# 与号(&)表示替换命令中的匹配模式
+# 无论什么文本匹配上定义的模式，都可以使用 与号 在替换模式中调用它
+
+# & 表示被匹配到的东西
+echo 'The cat sleeps in his hat' | sed 's/.at/"&"++/g'
+
+# 当模式匹配 cat， cat出现在替换单词中；当匹配hat，hat出现在替换的单词中
+
+catelog=`pwd`
+
+cd $catelog
+
+

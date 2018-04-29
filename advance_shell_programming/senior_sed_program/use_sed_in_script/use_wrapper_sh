@@ -1,0 +1,16 @@
+#!/bin/bash
+
+clear
+
+# 可以将sed编辑器命令放到shell脚本包装器（wrapper）中 
+# 包装器就像是sed编辑器脚本和命令行之间的媒介
+
+
+# ./use_wrapper_sh data
+# 用sed反转 文件data的内容
+sed -n '{
+1!G;
+h;
+$p
+}' $1
+

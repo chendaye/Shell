@@ -1,0 +1,54 @@
+#!/bin/bash
+
+
+clear
+
+# 只在数据流的特定子集上执行命令
+
+# 命令格式 [address]b [label]
+
+# address 决定哪些行激发分支命令
+# label 参数定义于何处分支， 如果label参数不存在，分支命令将继续执行到脚本末尾
+
+sed '
+2,3b;
+s/This/Fuck/
+' test
+
+# 还阔以定义一个想要分支转到的标签，标签以冒号开头，最长7个字符
+
+echo
+
+# 使用分支可以跳过与分支地址匹配的命令，而仍然执行脚本中的其他命令
+sed '
+/header/b jp;
+s/header/Fuck you/;
+s/four/ys/;
+:jp;
+s/three/fuck you/
+' test
+
+# 上例 展示分支到 sed 后面标签的情况； 还可以分支到 sed 前面的标签（可以创建一个循环效果）
+
+echo
+
+# # 脚本每一次递归都从文本字符串删除第一个出现的逗号。然后打印该字符串，
+# 有一个问题这个循环永远不会结束，它搜索逗号直到，手动停止
+
+
+#echo 'This, is, a, test, to, remove, commas ' | sed -n '{
+#:str;
+#s/,//1p;
+#b str
+#}'
+
+
+echo 
+
+# 要避免死循环，要为分支命令指定供其查找的地址模式；如果模式没有出现则分支停止
+echo 'This, is, a, test, to, remove, commas ' | sed -n '{
+:str;
+s/,//1p;
+/,/b str
+}'
+

@@ -30,5 +30,54 @@ echo
 
 # next命令的多行版本（大写N）将文件的下一行添加到已经存在于模式空间的文本中
 # 效果相当于将数据流中的两个文本行合并，添加到同一模式空间中， sed将它们作为同一行文本处理
+echo '组合多行文本'
+
+# sed 先查找包含dog的文本行， 然后将它与下一行合并 ， 在用 s替换命令替换 换行符为 --
+sed '/dog/{
+N;
+s/\n/ -- /
+}' test1
+
+
+# 合并两行，匹配不在同一行的词组
+echo 
+sed '/developer/{
+N;
+s/\n//;
+s/developer key/success/
+}' test2
+
+
+echo 
+
+sed '/developer/{
+N;
+# 匹配跨行出现的内容
+s/developer\n key/success\n key/;
+# 匹配单行出现的内容
+s/developer key/success key/
+}' test2
+
+
+
+echo 
+# 存在一个问题，sed 将下一行读入模式空间，在到达文本的最后一行时，没有了下一行，所有 N 命令导致 sed 编辑器停止
+
+# 解决方法：将单行命令移动到 N命令之前， 将多行命令移动到 N命令之后
+
+sed '/developer/{
+s/developer key/success key/;
+N；
+s/developer\n key/success\n key/
+}' test2
+
+
+
+
+
+
+
+
+
 
 

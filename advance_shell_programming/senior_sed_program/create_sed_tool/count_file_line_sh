@@ -1,0 +1,14 @@
+#!/bin/bash
+
+clear
+
+# 给每一行添加行号
+# 行号添加在每一行的上面，不方便阅读
+sed '=' data
+
+# 优化
+echo
+# 两次使用 sed； 用多行命令N 处理
+sed '=' data | sed 'N;s/\n/: /'
+
+
