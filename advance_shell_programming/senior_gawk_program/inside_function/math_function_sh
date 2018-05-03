@@ -1,0 +1,27 @@
+#!/bash/bin
+
+clear
+
+# 数学函数
+
+
+# atan2(x,y)  x/y 的反正切以弧度表示
+
+# rand()    大于0小于一的随机浮点值
+
+# cos(x)   x的余弦，x以弧度表示
+
+# sin(x)   x的正弦，x以弧度表示
+
+# exp(x)  x的指数
+
+# sqrt(x)  x的平方根
+
+# int(0)  x的整数部分 整数部分截止到0
+
+# srand(my phone) 
+
+# log(x)  x的自然对数
+
+
+

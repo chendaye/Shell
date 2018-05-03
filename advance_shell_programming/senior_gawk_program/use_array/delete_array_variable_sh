@@ -1,0 +1,22 @@
+#!/bin/bash
+clear
+
+# 从关联数组中删除索引 delete array[index]
+
+gawk 'BEGIN{
+ arr["1"] = 1
+ arr["2"] = 2
+ arr["3"] = 3
+ for (key in arr)
+ {
+  print key "----" arr[key]
+ }
+
+ print " ---------------------"
+ delete arr["1"]
+ for (keys in arr)
+ {
+  print keys "----" arr[keys]
+ }
+
+}'

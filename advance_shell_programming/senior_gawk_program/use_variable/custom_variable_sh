@@ -1,0 +1,30 @@
+#!/bin/bash
+clear
+
+
+# gawk 的用户自定义变量可以是多个字母和下划线、数字；但是不能以数字开头。
+# gawk自定义变量名区分大小写
+
+# 在脚本中赋值变量
+gawk ' BEGIN{
+test="This is test"; 
+print test;
+test=666;
+print test
+}'
+
+
+echo
+# 在命令行中赋值变量
+# 可以使用gawk命令为gawk程序变量赋值。可以在常规代码外设置值、实时更改值
+# 这样就做到了改变脚本行为而不用更改脚本代码
+gawk -f script1 n=2 data1
+
+echo
+# 使用命令行参数定义变量值存在一个问题，在设置变量时，值不能在代码BEGIN	部分使用
+# 可以通过-v 参数来解决，它允许指定在代码的BEGIN之前设置变量，-v 参数必须放置在命令行上的脚本代码之前
+gawk -v n=3 -f script1 data1
+
+
+
+

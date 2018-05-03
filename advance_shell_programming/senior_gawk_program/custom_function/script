@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BEGIN{
+ FS=","
+}
+
+{
+ ret = func2()
+ print ret
+}
+
+

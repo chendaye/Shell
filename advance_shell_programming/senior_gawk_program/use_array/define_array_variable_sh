@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+
+# gawk 使用关联数组，关联数组不同于数字数组，它的索引可以是任意文本字符串
+
+
+# 定义数组变量
+# var[index] = element
+
+
+gawk 'BEGIN{
+ arr["c"] = "c";
+ print arr["c"]
+}'
+
+

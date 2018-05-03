@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+
+# 可以用基本正则表达式和扩展正则表达式来过路数据
+
+
+gawk 'BEGIN{FS=","} /11/{print $1}' data

@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+
+gawk -f funclib -f script data
+
+
+
+

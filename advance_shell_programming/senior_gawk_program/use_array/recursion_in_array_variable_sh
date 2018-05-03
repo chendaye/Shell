@@ -1,0 +1,19 @@
+#!/bin/bash
+clear
+
+# 遍历数组
+
+gawk 'BEGIN{
+ var["a"] = 1
+ var["b"] = 2
+ var["c"] = 3
+ for (key in var)
+ {
+  print "key is:" key,  "val is :" var[key]
+ }
+}'
+
+
+
+
+

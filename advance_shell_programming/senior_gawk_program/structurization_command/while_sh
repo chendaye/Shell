@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+
+gawk '{
+ total = 0
+ i = 0
+ while(i < 6){
+  total += $i
+  i++
+ }
+ avg = total/5
+ print avg
+}' data
+
+
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+clear
+
+gawk '{if($1 > 40)print $1}' data
+echo ++++++++++++++++++++++++++++++
+
+
+
+
+gawk '{
+ if ($1 > 40) {
+   x = $1 - 1
+   print x
+ } else 
+ {
+   x = ($1 - 1) * 10
+   print x
+ }
+}' data
+
+

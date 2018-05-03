@@ -1,0 +1,17 @@
+#!/bin/bash
+clear
+
+# 时间函数
+
+# mktime(datespec)   将以YYYY MM DD MM SS HH MM SS 格式的时间转化为时间戳
+
+# strftime(format [, timestamp]) 将时间戳格式化
+
+# systime() 当前日期的时间戳
+
+gawk 'BEGIN{
+ date = systime()
+ day = strftime("%A,%B,%d,%Y", date)
+ print day 	
+}'
+

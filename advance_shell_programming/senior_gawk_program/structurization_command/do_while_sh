@@ -1,0 +1,15 @@
+#!/bin/bash
+
+clear
+
+gawk '{
+ total = 0
+ i = 1
+ do{
+   total += $i
+   i++
+ }while(i < 6)
+
+ print total
+}' data
+

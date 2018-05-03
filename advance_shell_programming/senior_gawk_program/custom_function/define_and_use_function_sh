@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+
+
+# 使用函数
+
+gawk '
+function fun(m)
+{
+ return int(m * rand())
+}
+
+BEGIN{
+ ret = fun(78)
+ print ret
+}'
