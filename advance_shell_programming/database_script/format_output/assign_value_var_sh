@@ -1,0 +1,20 @@
+#!/bin/bash
+clear
+
+
+# 值赋值给变量
+
+M=`which mysql`
+
+# B s 参数可以不输出报头信息
+dbs=`$M chendaye666 -u root -Bse 'show tables'`
+
+
+for tb in $dbs
+do
+ echo $tb
+done
+
+
+
+

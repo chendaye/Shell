@@ -1,0 +1,5 @@
+#!/bin/bash
+clear
+
+mysql chendaye666 -u root -X -e 'select * from posts'
+

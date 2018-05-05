@@ -1,0 +1,39 @@
+#!/bin/bash
+clear
+# 命令 mysql -uroot -p   对于非交互式的脚本不太友好
+# 可以用 mysql -uroot -proot  但是弊端是所有访问脚本的用户都将知道数据库密码
+
+# 解决方法是用mysql的特殊配置文件
+# mysql 用 $HOME/.my.cnf 来读取特殊的启动命令和设置；其中一个设置是启动mysql会话的默认密码
+
+# 在用户家目录创建 .my.cnf 文件 并且只给所有者读权限  400 chmod 400 .my.cnf
+ 
+# 在文件中设置默认密码,文件内容如下
+
+#[client]
+#password = root
+
+
+# 设置好上述脚本之后 就可以用一下命令登录数据库
+
+# 查找数据库位置 
+MYSQL=`which mysql`
+
+# 链接数库
+# $MYSQL  chendaye666 -u root 
+
+# 向数据库服务器发送数据
+# 发送命令有两种方式 1：发送单条命令并退出 2：发送多条命令
+# mysql 要用-e参数来实现
+
+$MYSQL  chendaye666 -u root -e 'select * from posts'
+
+
+
+# 多条命令
+
+$MYSQL chendaye666 -u root <<EOF
+show tables;
+select title from posts;
+EOF
+
