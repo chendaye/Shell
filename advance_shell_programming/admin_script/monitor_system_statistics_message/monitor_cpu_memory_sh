@@ -1,0 +1,143 @@
+#!/bin/bash
+clear
+
+# 用脚本监视 CPU 内存使用情况
+
+# 有几个命令可以提取系统内存和cpu的信息
+
+# uptime 的输出
+# 当前时间
+# 系统运行的天、小时、分钟
+# 当前已登录到系统的用户数
+# 1、5、15 分钟的装载平均值
+
+
+# vmstat 的输出
+# 第一次运行 vmstat 命令时将显示自上次重新引导的平均值
+# 要获取当前统计信息 必须使用参数 vmstat 1 2  第二行包含当前统计信息
+
+# vmstat 输出的意义：
+# r 等待cpu时间的进程数
+# b 不间断休眠中的进程数
+# swpd 使用的虚拟内存量(M)
+# free 未使用的物理内存量(M)
+# buff 用作缓存空间的内存量(M)
+# cache 用作告诉缓存空间的内存量(M)
+# si 从磁盘交换的内存量
+# so 交换到磁盘的内存量
+# bi 从块设备收到的块数
+# bo 发送到块设备的块数
+# in 每秒cpu的中断数
+# cs 每秒cpu的上下文交换数
+# us cup运行在非内核代码上时间的百分比
+# sy cpu运行在内核代码上时间的百分比
+# id cpu空间的时间百分比
+# wa cpu消耗在等待I/O上的时间百分比
+# st 从虚拟机窃取的cpu时间百分比
+
+# vmstat 命令的信息量很大。 通常只需要 空闲内存 空闲cpu时间 百分比就可以大致了解系统情况
+
+
+# 首先去除 vmstat 的 header
+# vmstat 1 2 | sed -n '/[0-9]/p'
+
+
+# 只需要第二行的数据
+# vmstat 1 2 | sed -n '/[0-9]/p' | sed -n '2p'
+
+# 用日期和时间戳来标记每个记录
+# date +"%Y-%d-%m %k:%M:%S"
+
+# 有了输出还要考虑如何记录数据
+# 可以在$HOME目录中创建日志文件，每次运行脚本追加数据
+# 还要考虑日志的格式，以便利于阅读，可以生成CSV HTML
+
+# 创建脚本
+# 脚本需要定时对系统进行抽样，所以需要两个独立的脚本
+# 一个用于捕获数据并存入日志文件中，此脚本应该定时运行
+# 第二个脚本应该输出报告并以电子邮件的方式发送给接收人，也是一个定时任务
+
+# 捕获数据的脚本
+outfile="$HOME/system.csv"
+date=`date +%Y-%d-%m`
+time=`date +%k:%M:%S`
+
+timeout=`uptime`
+vmout=`vmstat 1 2`
+
+user=`echo $timeout | gawk '{print $4}'`
+load=`echo $timeout | gawk '{print $9}' | sed 's/,//'`
+free=`vmstat 1 2 | sed -n '/[0-9]/p' | sed -n '2p' | gawk '{print $4}'`
+idle=`vmstat 1 2 | sed -n '/[0-9]/p' | sed -n '2p' | gawk '{print $15}'`
+
+
+echo "$date, $time, $timeout, $vmout, $user, $load, $free, $idle"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

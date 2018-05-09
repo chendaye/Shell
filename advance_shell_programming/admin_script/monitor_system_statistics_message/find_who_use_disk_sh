@@ -1,0 +1,94 @@
+#!/bin/bash
+
+clear
+
+
+# 跟踪用户的磁盘使用情况
+# 磁盘使用情况很重要，但是Linux 没有一个命令提供这些信息，需要用脚本把多个命令的结果综合起来
+
+
+
+# du 命令：此命令显示各个各个文件和目录的使用情况， -s 可以显示目录级别的概况
+# 这个在计算单个用户的磁盘使用情况时非常便利。对于/home 目录内容使用此命令可以总结出每个用户的 $HOME 目录
+# du -s /home/*
+
+# 上面命令得到了目录总计列表，以KB为单位； 其中有一个 lost+found 的特殊目录，这不是一个用户账户
+# 要去掉这个目录可以只用 -v 的 grep 命令 ，即打印出来指定文本行以外的所有行
+# du -s /home/* | grep -v lost
+
+# 接下来去掉所有路径名
+# du -s /home/* | grep -v lost | sed 's/\/home\///'
+
+
+
+# 接着让输出降序排列
+# du -s /home/* | grep -v lost | sed 's/\/home\///' | sort -g -r
+
+
+
+# 所有用户的总磁盘量
+# du -s /home
+
+
+# 创建脚本
+
+# 现在已经提取了报告需要的数据，接下来要用表格呈现出来
+
+# 处理报告的数据最简单的方法是 gawk 
+# 报告由3部分组成：
+# 头部，用文字标识各列
+# 报告主体，显示用户，用户使用的磁盘空间，和用户消耗占总量的百分比
+# 尾部，显示所有用户的磁盘使用情况
+
+# gawk 可以把所有这些函数作为单个命令执行，只需要使用 BEGIN END 标记
+
+# 创建临时文件
+temp=`mktemp -t disk.temp.XXX`
+
+# 提取磁盘使用情况
+du -s /home/* | grep -v lost | sed 's/\/home\///' | sort -g -r > $temp
+
+# 磁盘使用总量
+total=`du -s /home | gawk '{print $1}'`
+
+# 制作表格 (% 后面的 - 号，代表左对齐)
+cat $temp | gawk -v n="$total" '
+BEGIN {
+ print "Total Usage By User"
+ print "User\t\t\tSpace\t\t\tPercent"
+}
+
+{
+ printf "%-23s %-23d  %-23.2f\n", $2, $1, ($1/n)*100
+}
+END {
+ print "---------------------------------"
+ printf "Total\t%d\n",n
+}
+'
+
+# 删除临时文件
+rm -f $temp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

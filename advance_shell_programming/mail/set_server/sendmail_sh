@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# sendmail MTA 包是Internet邮件服务器使用的最为流行的开源MTA包之一
+
+
+# sendmail 程序的部件
+# 主执行程序称为sendmail。它通常以后台模式运行，侦听SMTP从远程邮件服务器的链接，以及为本地用户转发消息
+
+
+# 具体用法具体了解
+
