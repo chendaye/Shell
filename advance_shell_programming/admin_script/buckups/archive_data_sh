@@ -13,4 +13,61 @@ clear
 # 如果希望从脚本中删除这个信息可以 ： tar -cf test.tar ../test 2> /dev/null
 
 
+# 文件归档后可以压缩，减小大小
+# 压缩工具很多 gzip test.tar     生成  test.tar.gz
+
+
+# 创建归档脚本
+
+# 当前日期
+date=`date +%y%m%d`
+
+# 文件名
+file=test$date
+
+# 源文件
+source=../test
+
+# 目标文件
+destination=./$file
+
+# 归档
+tar -cf $destination $source 2> /dev/null
+
+# 压缩
+gzip $destination
+
+
+
+
+
+# 创建每小时归档脚本
+
+# 创建与月份日期对应的目录结构来保存归档文件
+# mkdir -p 可以递归创建目录
+
+day=`date +%d`
+month=`date +%m`
+time=`date +%k%M`
+
+source=../test
+catlog=./
+
+# 创建目录
+current=$catlog/$month/$day
+mkdir -p $current
+
+destination=$current/chendaye666$time
+
+tar -cf $destination $source 2> /dev/null
+gzip $destination
+
+ 
+
+
+
+
+
+
+
 
